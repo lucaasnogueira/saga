@@ -1,0 +1,25 @@
+.form-control{
+    width: 30vh;
+}
+
+.search-content {
+    margin-top: 50px; /* Margem superior para separar do topo */
+    padding-left: 50vh;
+    text-align: end /* Centraliza horizontalmente */
+}
+
+.search-form {
+    padding-right: 5vh;
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza na horizontal */
+}
+
+.btn{
+    border-color: orange;
+    color: orangered;
+}
+
+.btn:hover{
+    background-color: orangered;
+    border-color: orange;
+}

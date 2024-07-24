@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAGA</title>
+    <link rel="shortcut icon" href="{% static 'assets\img\aurora_amanaus.png' %}" type="image/x-icon">
+    {% block head %}
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+    {% endblock %}
+
+    {% block extra_head %}
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+    {% endblock %}
+
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="header">
+            <header>
+                <nav>
+                    <a class="logo" href="#"> SAGA</a>
+                    <div class="toggle-sidebar">
+                        <i class='bx bx-menu'></i>
+                        <div class="text"></div>
+                    </div>
+                    <ul class="nav-list">
+                        <a id="logout-link" href="#">Logout</a>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="sidebar close">
+            <!-- ========== Logo ============  -->
+            <a href="#" class="logo-box">
+                <img src="{% static 'assets/img/aurora_amanaus.png' %}" alt="">
+                <div class="logo-name">SAGA</div>
+            </a>
+        
+            <!-- ========== List ============  -->
+            <ul class="sidebar-list">
+                <!-- -------- Non Dropdown List Item ------- -->
+                <li>
+                    
+                    <div class="title">
+                        <a href="{% url 'main_home' %}" class="link">
+                            <i class='bx bx-home'></i>
+                            <span class="name">Home</span>
+                        </a>
+                        <!-- <i class='bx bxs-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Home</a>
+                        <!-- submenu links here  -->
+                    </div>
+                </li>
+        
+                <!-- -------- Dropdown List Item ------- -->
+                <li class="dropdown">
+                    <div class="title">
+                        <a href="#" class="link">
+                            <i class='bx bx-user-plus'></i>
+                            <span class="name">Cadastrar</span>
+                        </a>
+                        <i class='bx bxs-chevron-down'></i>
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Cadastrar</a>
+                        <a href="{% url 'main_cadastro_carga' %}" class="link">Carga</a>
+                        <a href="{% url 'main_cadastro_cedido' %}" class="link">Cedido</a>
+                        <a href="{% url 'main_cadastro_container' %}" class="link">Container</a>
+                        <a href="{% url 'main_cadastro_desunitizacao' %}" class="link">Desunitização</a>
+                        <a href="{% url 'main_cadastro_motorista' %}" class="link">Motorista</a>
+                    </div>
+                </li>
+        
+                <!-- -------- Dropdown List Item ------- -->
+                <li class="dropdown">
+                    <div class="title">
+                        <a href="#" class="link">
+                            <i class='bx bx-list-ul'></i>
+                            <span class="name">Lista</span>
+                        </a>
+                        <i class='bx bxs-chevron-down'></i>
+                    </div>
+                    <div class="submenu">
+                        <a href="#" class="link submenu-title">Lista</a>
+                        <a href="{% url 'main_lista_carga' %}" class="link">Carga</a>
+                        <a href="{% url 'main_lista_cedido' %}" class="link">Cedido</a>
+                        <a href="{% url 'main_lista_container' %}" class="link">Container</a>
+                        <a href="{% url 'main_lista_desunitizacao' %}" class="link">Desunitização</a>
+                        <a href="{% url 'main_lista_motorista' %}" class="link">Motorista</a>
+                    </div>
+                </li>
+        
+                <!-- -------- Non Dropdown List Item ------- -->
+                <li>
+                    <div class="title">
+                        <a href="{% url 'main_relatorio' %}" class="link">
+                            <i class='bx bx-line-chart'></i>
+                            <span class="name">Relatórios</span>
+                        </a>
+                        <!-- <i class='bx bxs-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="{% url 'main_relatorio' %}" class="link submenu-title">Relatórios</a>
+                        <!-- submenu links here  -->
+                    </div>
+                </li>
+        
+                <!-- -------- Non Dropdown List Item ------- -->
+                <li>
+                    <div class="title">
+                        <a href="{% url 'admin:index' %}" class="link">
+                            <i class='bx bx-lock-alt'></i>
+                            <span class="name">Administrador</span>
+                        </a>
+                        <!-- <i class='bx bxs-chevron-down'></i> -->
+                    </div>
+                    <div class="submenu">
+                        <a href="{% url 'admin:index' %}" class="link submenu-title">Administrador</a>
+                        <!-- submenu links here  -->
+                    </div>
+                </li>   
+        
+                <!-- -------- Non Dropdown List Item ------- -->
+    
+        
+            </ul>
+        </div>
+        
+        <!-- ============= Home Section =============== -->
+
+        <div class="content">
+            {% block main %}
+
+            {% endblock  %}
+
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024, Aurora EADI.
+            Versão 1.2
+            </p>
+        </div>
+    </div>
+
+
+    <script src="{% static 'assets/app.js' %}"></script>
+{% block extra_js %}
+
+
+
+{% endblock %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const logoutLink = document.getElementById('logout-link');
+    if (logoutLink) {
+        logoutLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Evita o comportamento padrão de navegação
+
+            // Cria um formulário em tempo de execução
+            const form = document.createElement('form');
+            form.action = "{% url 'logout' %}";
+            form.method = "post";
+
+            // Adiciona o token CSRF
+            const csrfInput = document.createElement('input');
+            csrfInput.type = 'hidden';
+            csrfInput.name = 'csrfmiddlewaretoken';
+            csrfInput.value = "{{ csrf_token }}";
+            form.appendChild(csrfInput);
+
+            // Adiciona o formulário ao corpo do documento e envia
+            document.body.appendChild(form);
+            form.submit();
+        });
+    }
+});
+
+
+
+</script>
+</body>
+</html>

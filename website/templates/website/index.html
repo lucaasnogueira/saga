@@ -1,0 +1,317 @@
+{% extends "website/base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<body>
+
+{% include "website/menu.html" %}
+
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="{% static 'index/assets/images/video-container.mp4' %}" type="video/mp4" />
+      </video>
+
+      <div class="video-overlay header-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption">
+              <h2>Olá,</h2>
+              <h2>Seja bem-vindo ao SAGA</h2>
+              <p>Somos um sistema web desenvolvido pela TI da Aurora EADI, voltado à gestão de cargas. Uma solução robusta, simples e eficiente. Projetada para simplificar vários aspectos do processo logístico.</p>
+              <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Saiba mais!</a></div>
+              </div>
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- ***** Main Banner Area End ***** -->
+
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+          
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'index/assets/images/produtividade.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Maior produtividade</h4>
+                <p>Com a redução de tempo com tarefas que podem ser automatizadas, a produtividade é elevada.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'index/assets/images/qualidade.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Maior qualidade</h4>
+                <p>Com a alta produtividade a qualidade do serviço é elevada.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'index/assets/images/satisfacao.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Maior satisfação</h4>
+                <p>Com um serviço simples, rápido e prático, todos ficam satisfeitos.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'index/assets/images/eficiencia.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Maior precisão</h4>
+                <p>Com um serviço totalmente automatizado as chances de erro são muito baixas.</p>
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="icon">
+                <img src="{% static 'index/assets/images/praticidade.png' %}" alt="">
+              </div>
+              <div class="down-content">
+                <h4>Maior praticidade</h4>
+                <p>Um sistema simples, intuitivo e capacidade de produtividade relevante.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading">
+            <h2>Vantagens do Sistema AMG</h2>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="categories">
+            <h4>Principais vantagens</h4>
+            <ul>
+              <li><a href="#">Praticidade</a></li><br>
+              <li><a href="#">Gerenciamento fácil</a></li><br>
+              <li><a href="#">Recursos personalizáveis</a></li><br>
+              <li><a href="#">Amplo suporte</a></li><br> 
+              <li><a href="#">Eficiência</a></li>
+            </ul>
+            <div class="main-button-red">
+              <a href="#">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <a href="#"><img src="{% static 'index/assets/images/crescimento.jpg' %}" alt="New Lecturer Meeting"></a>
+                </div>
+                <div class="down-content">
+                  <a href="#"><h4>Praticidade</h4></a>
+                  <p>Processos administrativos simplificados. Elevando a produtividade</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <a href="#"><img src="{% static 'index/assets/images/flexibilidade.jpg' %}" alt="New Lecturer Meeting"></a>
+                </div>
+                <div class="down-content">
+                  <a href="#"><h4>Eficiência operacional</h4></a>
+                  <p>Sistema projetado para minimizar erros. Economia de tempo e recursos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <a href="#"><img src="{% static 'index/assets/images/digital.jpg' %}" alt="New Lecturer Meeting"></a>
+                </div>
+                <div class="down-content">
+                  <a href="meeting-details.html"><h4>Digital</h4></a>
+                  <p>Requisitos reduzidos de papelada e armazenamento físico.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="meeting-item">
+                <div class="thumb">
+                  <a href="#"><img src="{% static 'index/assets/images/seguranca.jpg' %}" alt="New Lecturer Meeting"></a>
+                </div>
+                <div class="down-content">
+                  <a href="#"><h4>Segurança</h4></a>
+                  <p>Gerenciamento seguro de dados e proteção de privacidade.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply-now" id="apply">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>Desenvolvido pelo TI Aurora EADI</h3>
+                <p>Elaborado pelos colaboradores do TI da Aurora EADI</p>
+                <div class="main-button-red">
+                  <div class="scroll-to-section"><a href="#contact">Saiba mais</a></div>
+              </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="item">
+                <h3>Simplicidade e praticidade</h3>
+                <p>Vamos trabalhar juntos elaborar melhorias em nossos processos operacionais.</p>
+                <div class="main-button-yellow">
+                  <div class="scroll-to-section"><a href="#contact">Saiba mais</a></div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="accordions is-first-expanded">
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Sobre o software</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>A solução ideal para o controle eficiente de entradas e saídas de cargas. Com o nosso sistema web, o armazém geral terá total gerenciamento sobre o fluxo de containers na empresa. Otimizando sua gestão logística, reduzindo custos administrativos e garantindo a integridade de suas mercadorias.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Nosso objetivo</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Temos orgulho de nossa dedicação à excelência e trabalhamos duro para garantir que o armazém geral possa personalizar nosso software para atender às suas demandas exclusivas. Nosso design intuitivo e interfaces fáceis de usar permitem que os colaborares terem uma experiência simplificada.</p>
+                    </div>
+                </div>
+            </article>
+            <article class="accordion">
+                <div class="accordion-head">
+                    <span>Suporte ao cliente</span>
+                    <span class="icon">
+                        <i class="icon fa fa-chevron-right"></i>
+                    </span>
+                </div>
+                <div class="accordion-body">
+                    <div class="content">
+                        <p>Para garantir uma implantação perfeita e sucesso contínuo, oferecemos suporte contínuo, treinamento e assistência especializada com uma equipe dedicada de profissionais. Melhoramos continuamente nosso software para corresponder às demandas do mercado em constante mudança, em um esforço para permanecer na vanguarda das inovações técnicas.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-us" id="contact">
+    <div class="footer">
+      <p>Copyright © 2024 Aurora EADI. All Rights Reserved. 
+          <br>Developed by: <a href="https://lucaasnogueira.github.io/portifolio/" target="_parent" title="lucas nogueira silva">Lucas Nogueira</a></p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'index/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'index/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'index/assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'index/assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'index/assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'index/assets/js/tabs.js' %}"></script>
+    <script src="{% static 'index/assets/js/video.js' %}"></script>
+    <script src="{% static 'index/assets/js/slick-slider.js' %}"></script>
+    <script src="{% static 'index/assets/js/custom.js' %}"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+
+</body>
+
+{% endblock %}

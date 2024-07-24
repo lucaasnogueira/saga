@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<header>Cadastrar Motorista</header>
+
+<form method="post" action="{% url 'main_motorista_novo' %}" class="form">
+    {% csrf_token %}
+    <div class="form-first">
+        <div class="fields">
+            <div class="input-field">
+                <label for="id_nome">Nome:</label>
+                {{ form.nome }}
+            </div>
+            <div class="input-field">
+                <label for="id_cpf">CPF:</label>
+                {{ form.cpf }}
+            </div>
+            <div class="input-field">
+                <label for="id_empresa">Empresa:</label>
+                {{ form.empresa }}
+            </div>
+        </div>
+
+        <button type="submit" class="nextBtn">
+            <span class="btnText">Cadastrar</span>
+        </button>
+    </div>
+</form>
+
+{% endblock %}

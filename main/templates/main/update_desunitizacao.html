@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<header>Atualizar Desunitização e Unitização</header>
+
+<form method="post" action="{% url 'main_desunitizacao_update' desunitizacao.id %}" class="form">
+    {% csrf_token %}
+    <div class="form-first">
+        <div class="fields">
+            <div class="input-field">
+                <label for="id_carga">Carga:</label>
+                {{ form.carga }}
+            </div>
+            <div class="input-field">
+                <label for="id_conferente">Conferente:</label>
+                {{ form.conferente }}
+            </div>
+            <div class="input-field">
+                <label for="id_container_Origem">Container de Origem:</label>
+                {{ form.container_Origem }}
+            </div>
+            <div class="input-field">
+                <label for="id_container_Cedido">Container Cedido:</label>
+                {{ form.container_Cedido }}
+            </div>
+            <div class="input-field">
+                <label for="id_lacre_Original">Lacre Original:</label>
+                {{ form.lacre_Original }}
+            </div>
+            <div class="input-field">
+                <label for="id_lacre_Aurora">Lacre Aurora:</label>
+                {{ form.lacre_Aurora }}
+            </div>
+            <div class="input-field">
+                <label for="id_data_Deslacre">Data de Deslacre:</label>
+                {{ form.data_Deslacre }}
+            </div>
+            <div class="input-field">
+                <label for="id_quantidade_de_caixas_ou_volume">Quantidade de Caixas ou Volume:</label>
+                {{ form.quantidade_de_caixas_ou_volume }}
+            </div>
+            <div class="input-field">
+                <label for="id_data_inicio">Data de Início:</label>
+                {{ form.data_inicio }}
+            </div>
+            <div class="input-field">
+                <label for="id_data_fim">Data de Fim:</label>
+                {{ form.data_fim }}
+            </div>
+        </div>
+
+        <button type="submit" class="nextBtn">
+            <span class="btnText">Atualizar</span>
+        </button>
+    </div>
+</form>
+
+{% endblock %}

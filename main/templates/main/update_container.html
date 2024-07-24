@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<header>Atualizar Container</header>
+
+<form method="post" action="{% url 'main_container_update' container.id %}" class="form">
+    {% csrf_token %}
+    <div class="form-first">
+        <div class="fields">
+            <div class="input-field">
+                <label for="id_numero">Número:</label>
+                {{ form.numero }}
+            </div>
+            <div class="input-field">
+                <label for="id_lacre">Lacre de origem:</label>
+                {{ form.lacre }}
+            </div>
+            
+            <div class="input-field">
+                <label for="id_data_entrada">Data de Entrada:</label>
+                {{ form.data_entrada }}
+            </div>
+            <div class="input-field">
+                <label for="id_data_saida">Data de Saída:</label>
+                {{ form.data_saida }}
+            </div>
+           
+            <div class="input-field">
+                <label for="id_demurrage">Free Time:</label>
+                {{ form.demurrage }}
+            </div>
+            <div class="input-field">
+                <label for="id_tipo">Tipo de Container:</label>
+                {{ form.tipo }}
+            </div>
+            
+            <div class="input-field">
+                <label for="id_prancha_entrada">Prancha de Entrada:</label>
+                {{ form.prancha_entrada }}
+            </div>
+            <div class="input-field">
+                <label for="id_prancha_saida">Prancha de Saída:</label>
+                {{ form.prancha_saida }}
+            </div>
+            <div class="input-field">
+                <label for="id_cavalo_entrada">Cavalo de Entrada:</label>
+                {{ form.cavalo_entrada }}
+            </div>
+            <div class="input-field">
+                <label for="id_cavalo_saida">Cavalo de Saída:</label>
+                {{ form.cavalo_saida }}
+            </div>
+            
+            <div class="input-field">
+                <label for="id_motorista_Entrada">Motorista de Entrada:</label>
+                {{ form.motorista_Entrada }}
+            </div>
+            <div class="input-field">
+                <label for="id_motorista_Saida">Motorista de Saída:</label>
+                {{ form.motorista_Saida }}
+            </div> 
+            <div class="input-field">
+                <label for="id_preenchimento">Preenchimento:</label>
+                {{ form.preenchimento }}
+            </div>
+            <div class="input-field">
+                <label for="id_porto">Porto:</label>
+                {{ form.porto }}
+            </div>
+            <div class="input-field">
+                <label for="id_origem">Origem:</label>
+                {{ form.origem }}
+            </div>
+            <div class="input-field">
+                <label for="id_destino">Destino:</label>
+                {{ form.destino }}
+            </div>
+            <div class="input-field">
+                <label for="id_transportador">Transportador:</label>
+                {{ form.transportador }}
+            </div>
+            <div class="input-field">
+                <label for="id_localização">Localização:</label>
+                {{ form.localização }}
+            </div>
+            <div class="input-field" id="avariaContainer">
+                <h5>Esquerdo</h5>
+                <label for="id_avaria">Painel Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Painel Meio:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Painel Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Montante:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Barra "J":</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Supor. Ventilação:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Teto:</label>
+                {{ form.avaria }}
+            </div>
+            <div class="input-field" id="avariaContainer">
+                <h5> Frontal</h5>
+                <label for="id_avaria">Painel Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Painel Meio:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Painel Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Trava da Alavanca:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Haste:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Suporte da Haste:</label>
+                {{ form.avaria }}
+            </div>
+            <div class="input-field" id="avariaContainer">
+                <h5> Traseira</h5>
+                <label for="id_avaria">Porta Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Porta Meio:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Porta Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Borracha:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Batedor da Porta:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Alavanca:</label>
+                {{ form.avaria }}
+            </div>
+            <div class="input-field" id="avariaContainer">
+                <h5> Direito</h5>
+                <label for="id_avaria">Painel Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Painel Meio:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Painel Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Inferior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Longarina Superior:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Montante:</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Barra "J":</label>
+                {{ form.avaria }}
+                <label for="id_avaria">Supor. Ventilação:</label>
+                {{ form.avaria }}
+            </div>
+        </div>
+
+        <button type="submit" class="nextBtn">
+            <span class="btnText">Atualizar</span>
+        </button>
+    </div>
+</form>
+
+{% endblock %}

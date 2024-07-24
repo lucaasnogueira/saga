@@ -1,0 +1,692 @@
+/* Estilos para o contêiner e as áreas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+}
+
+
+.container {
+    display: grid;
+    gap: 15px;
+    grid-template-areas: 
+        'header header header header'
+        'sidebar content content content'
+        'footer footer footer footer';
+    font-family: 'Poppins', sans-serif;
+    background-color: #ebeaea;
+}
+
+/* Estilos para o cabeçalho */
+.header {
+    grid-area: header;
+}
+
+.header a {
+    color: #393939;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.header a:hover {
+    color: rgb(255, 106, 0);
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: absolute;
+    left: 15px;
+    padding: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Cantarell, sans-serif;
+    background: #ffffff;
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 20px;
+    padding-right: 25px;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 5px;
+}
+
+.perfil {
+    height: 3vh;
+}
+
+.logout {
+    position: relative;
+    padding-top: 15px;
+}
+
+/* =============== Home Section =============== */
+.toggle-sidebar {
+    margin-top: 5px;
+    margin-left: -110vh;
+    cursor: pointer;
+}
+
+.toggle-sidebar i {
+    font-size: 35px; /* Tamanho do ícone do menu */
+    color: #ff5100;
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto (se houver) */
+    
+}
+
+.toggle-sidebar .text {
+    font-size: 14px; /* Tamanho do texto do botão (opcional) */
+    color: #333333;
+    margin-right: 10px;
+}
+
+
+
+/* Estilos para a barra lateral */
+
+/* Variables  */
+:root{
+    --color_Blue: #ffb300;
+    --color_Dark1: #ff7700;
+    --color_Dark2: #ffb300;
+    --color_Light1: #fff;
+    --color_Light2: #ffffff;
+}
+
+/* =============== Sidebar =============== */
+.sidebar{
+    grid-area: sidebar;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    left: 1vh;
+    height: auto;
+    width: 260px;
+    background-color: var(--color_Dark1);
+    transition: all .5s ease;
+    z-index: 100;
+    overflow: hidden;
+}
+.sidebar.close{
+    width: 78px;
+}
+
+/* --------- Logo ------------ */
+.logo-box{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--color_Light1);
+    transition: all .5s ease;
+    text-decoration: none;
+}
+.logo-box:hover{
+    color: var(--color_Blue);
+}
+.logo-box img{
+    font-size: 30px;
+    height: 50px;
+    min-width: 50px;
+    padding-left: 2vh;
+    text-align: center;
+    text-decoration: none;
+    line-height: 50px;
+    transition: all .5s ease;
+}
+.sidebar.close .logo-box img{
+    transform: rotate(360deg);
+}
+.logo-name{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* ---------- Sidebar List ---------- */
+.sidebar-list{
+    height: auto;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+    text-decoration: none;
+    list-style-type: none;
+}
+.sidebar-list::-webkit-scrollbar{
+    display: none;
+}
+.sidebar-list li{
+    transition: all .5s ease;
+}
+.sidebar-list li:hover{
+    background-color: var(--color_Dark2);
+}
+.sidebar-list a{
+    text-decoration: none;
+}
+.sidebar-list li .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+.sidebar-list li.active .title{
+    background-color: var(--color_Blue);
+}
+.sidebar-list li.active .bxs-chevron-down{
+    transition: all .5s ease;
+    transform: rotate(180deg);
+}
+.sidebar-list li .title .link{
+    display: flex;
+    align-items: center;
+}
+.sidebar-list li .title i{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: var(--color_Light1);
+    font-size: 20px;
+}
+.sidebar-list li .title .name{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color_Light1);
+}
+
+/* ---------------- Submenu ------------- */
+.sidebar-list li .submenu{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.sidebar-list li.dropdown.active .submenu{
+    width: unset;
+    height: unset;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 6px 14px 80px;
+    background-color: var(--color_Dark2);
+}
+.submenu .link{
+    color: var(--color_Light2);
+    font-size: 15px;
+    padding: 5px 0;
+    transition: all .5s ease;   
+}
+.submenu .link:hover{
+    color: #fff;
+}
+.submenu-title{
+    display: none;
+}
+
+/* ---------------- Submenu Close ------------- */
+.sidebar.close .logo-name,
+.sidebar.close .title .name,
+.sidebar.close .title .bxs-chevron-down
+{
+    display: none;
+}
+
+.sidebar.close .sidebar-list li{
+    position: relative;
+}
+.sidebar.close .sidebar-list li .submenu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    height: max-content;
+    width: max-content;
+    opacity: 0;
+    transition: all .5s ease;
+    pointer-events: none;
+}
+.sidebar.close .sidebar-list li:hover .submenu{
+    opacity: 1;
+    top: 0;
+    pointer-events: initial;
+    background-color: var(--color_Dark2);
+}
+.sidebar.close .submenu-title{
+    display: block;
+    font-style: 18px;
+    color: var(--color_Light1);
+}
+
+
+
+/* ============ Responsive / Breakpoints ========== */
+@media (max-width: 1080px){
+    
+}
+
+/* For Medium Devices */
+@media (max-width: 774px){
+   
+}
+@media (max-width: 560px){
+    
+}
+
+/* For Small Devices */
+@media (max-width: 360px){
+   
+}
+/* Estilos para o conteúdo */
+.content {
+    grid-area: content;
+    position: relative;
+    border-radius: 6px;
+    padding: 50px;
+    margin: 0 20px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+
+}
+
+.content header{
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    padding-left: 6vh;
+}
+.content header::before{
+    content: "";
+    position: absolute;
+    left: 6vh;
+    bottom: -2px;
+    height: 3px;
+    width: 100px;
+    border-radius: 8px;
+    background-color: rgb(255, 106, 0);
+}
+
+.content form{
+    position: relative;
+    margin-top: 16px;
+    padding-left: 6vh;
+    min-height: 490px;
+    background-color: #fff;
+    overflow: hidden;
+    height: auto;
+}
+
+.content form .form{
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+.content form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.input-field label{
+    font-size: 15px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+
+.input-field input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 6px;
+    border: 1px solid #ff7300;
+    padding: 0 15px;
+    height: 45px;
+    width: 400px;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field input[type="date"]{
+    color: #707070
+}
+.input-field input[type="date"]:valid{
+    color: #333
+}
+.input-field select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 6px;
+    border: 1px solid #ff7300;
+    padding: 0 15px;
+    height: 45px;
+    width: 430px; /* Ajuste conforme necessário para alinhar com outros campos */
+    margin: 8px 0;
+    background-color: #fff;
+}
+.input-field select:focus {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field textarea {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 6px;
+    border: 1px solid #ff7300;
+    padding: 10px 15px; /* Ajuste conforme necessário */
+    height: 60px; /* Ajuste conforme necessário */
+    width: 400px; /* Preenche a largura disponível */
+    margin: 8px 0;
+    background-color: #fff;
+    resize: vertical; /* Permite redimensionamento vertical */
+}
+.input-field textarea:focus {
+    box-shadow: 0 3px 6px rgba(255, 119, 0, 0.13);
+}
+.container form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 20px 0;
+    background-color: #ff7700;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.container form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #ff7700;
+}
+form button:hover{
+    background-color: #ff5100;
+}
+
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+
+/* Personalizando o tema Bootstrap Dark do DataTables */
+.dataTables_wrapper {
+    margin-top: 30px; /* Espaçamento superior */
+    padding-left: 40px;
+    background-color: #fff; /* Cor de fundo da tabela */
+    overflow: hidden; /* Evita que a sombra se estenda além */
+    color: #000000; 
+}
+
+#table-content a{
+    text-decoration: none;
+    color: orangered;
+    font-weight: bold;
+
+}
+
+/* Paginação */
+
+/* Container da paginação */
+.dataTables_wrapper .dataTables_paginate {
+    text-align: center; /* Centraliza os elementos da paginação */
+    margin-top: 20px; /* Espaçamento superior */
+    
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    padding-top: 1.5vh;
+}
+
+/* Botões de navegação (Previous e Next) */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    border-radius: 7px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #e0e0e0;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+    background-color: #fff;
+    color: #999;
+    cursor: default;
+}
+
+/* Botão de página atual */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #ff5100;
+    color: #fff;
+    border-color: #ff9100;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background-color: #ff5100;
+    border-color: #ff5100;
+}
+
+/* Caixa de seleção de quantidade de registros por página */
+.dataTables_wrapper .dataTables_length {
+    margin-top: 10px; /* Espaçamento superior */
+    float: left; /* Alinha à esquerda */
+}
+
+.dataTables_wrapper .dataTables_length select {
+    padding: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    border-radius: 4px;
+}
+
+/* Informações de página (Ex: Mostrando 1 a 10 de 100) */
+.dataTables_wrapper .dataTables_info {
+    float: left; /* Alinha à esquerda */
+    margin-top: 10px; /* Espaçamento superior */
+    color: #666;
+}
+
+/* Fim paginação */
+
+/* barra de pesquisa */
+
+/* Container da busca */
+.dataTables_wrapper .dataTables_filter {
+    float: right; /* Alinha à direita */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+/* Input de busca */
+.dataTables_wrapper .dataTables_filter input {
+    padding: 6px 12px;
+    width: 300px; /* Largura do campo de busca */
+    border: 1px solid #ff7300;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    border-color: #ff7300; /* Cor da borda quando focado */
+    outline: 0; /* Remove o contorno padrão do navegador */
+    box-shadow: 0 0 0 0.2rem rgba(255, 115, 0, 0.25); /* Adiciona um box shadow quando focado */
+}
+
+/* Botão de limpar */
+.dataTables_wrapper .dataTables_filter input[type="search"]::-ms-clear {
+    display: none; /* Esconde o botão de limpar para IE */
+}
+
+.dataTables_wrapper .dataTables_filter input[type="search"]::-ms-reveal {
+    display: none; /* Esconde o botão de revelar para IE */
+}
+
+.dataTables_wrapper .dataTables_filter input[type="search"]::search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none; /* Esconde o botão de cancelar para Chrome */
+}
+/* Fim barra de pesquisa */
+
+
+
+.dataTables_wrapper .dataTables_info {
+    color: #2e2e2e; /* Cor do texto de informações (ex: Mostrando 1 a 10 de 100) */
+}
+
+/* Estilização dos card´s */ 
+:root {
+    --blue: #ff7700;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+  }
+
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--blue);
+}
+
+.cardBox .card:hover {
+  background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+
+.input-field input[type="checkbox"] {
+    /* Estilos gerais para checkboxes */
+    margin-top: 5px; /* Espaçamento superior */
+    margin-right: 2px; /* Espaçamento à direita */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    width: 17px;
+    height: 17px;
+    background-color: transparent;
+}
+
+.input-field #id_avaria{
+    display: inline-flex;
+    align-items: center; /* Alinhar itens verticalmente */
+    margin-right: 20px; /* Espaçamento entre os itens */
+    width: calc(100% / 3 - 20px); /* Distribui em três colunas com espaço entre eles */
+    cursor: pointer; /* Cursor ao passar o mouse */
+}
+
+/* Estilos para o rodapé */
+.footer {
+    grid-area: footer;
+    background-color: #ff7700;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: auto;
+    height: 25px;
+    border-radius: 7px;
+    margin: 5px;
+    margin-right: 15px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+

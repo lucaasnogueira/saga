@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+
+
+        <header>Atualizar Carga</header>
+
+        <form method="post" action="{% url 'main_carga_update' carga.id %}" class="form">
+            {% csrf_token %}
+            <div class="form-first">
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="id_numero_Nota_Fiscal">Número Nota Fiscal:</label>
+                        {{ form.numero_Nota_Fiscal }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_cliente">Cliente:</label>
+                        {{ form.cliente }}
+                    </div>
+                    
+                    <div class="input-field">
+                        <label for="id_data_Lançamento_NF">Data lançamento NF:</label>
+                        {{ form.data_Lançamento_NF }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_data_saida">Data saída:</label>
+                        {{ form.data_saida }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_data_entrada">Data entrada:</label>
+                        {{ form.data_entrada }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_container_saida">Container saída:</label>
+                        {{ form.container_saida }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_container_entrada">Container entrada:</label>
+                        {{ form.container_entrada }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_numero_DI">Número da DI:</label>
+                        {{ form.numero_DI }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_transportadora">Transportadora:</label>
+                        {{ form.transportadora }}
+                    </div>
+                    <div class="input-field">
+                        <label for="id_avaria">Avaria:</label>
+                        {{ form.avaria }}
+                    </div>
+                </div>
+
+                <button type="submit" class="nextBtn">
+                    <span class="btnText">Cadastrar</span>
+                </button>
+                <hr>
+                CÓDIGOS DE AVARIAS </div>
+                A = Diferença de Peso /
+                B = Lacre Violado /
+                C = Amassado /
+                D = Vazamento /
+                E = Quebrado /
+                F = Rasgado /
+                G = Refitado /
+                H = Furado /
+                I = Aberto /
+                J = Molhado /
+                K = Despregado /
+                L = Repregado /
+                M = Indícios de Violação /
+                N = Riscado /
+                O = Sensor de Impacto Ativado /
+                P = Sensor de Inclinação Ativado /
+                Q = Carga Recebida com Alteração de Informação /
+                R = Indícios de Deterioração /
+                S = Carga Lacrada Pelo Fiel Depositário 
+            </div>
+        </form> 
+{% endblock %}

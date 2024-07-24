@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="//cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+
+{% endblock %}
+
+{% block main %}
+
+<header>Lista Container</header>
+
+<table id="table-content">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Número Container</th>
+            <th>Preenchimento</th>
+            <th>Data Entrada</th>
+            <th>Data Saída</th>
+            <th>Transportador</th>
+            <th>Localização</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for container in container %}
+        <tr>
+            <td><a href="{% url 'main_container_update' container.id %}"> {{ container.id }}</a></td>
+            <td>{{ container.numero }}</td>
+            <td>{{ container.preenchimento }}</td>
+            <td>{{ container.data_entrada }}</td>
+            <td>{{ container.data_saida }}</td>
+            <td>{{ container.transportador }}</td>
+            <td>{{ container.localização }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#table-content').DataTable({
+            language: {
+                info: 'Mostrando página _PAGE_ de _PAGES_',
+                infoEmpty: 'Nenhum registro disponível',
+                infoFiltered: '(Filtrados de _MAX_ registros no total)',
+                lengthMenu: 'Mostrando _MENU_ registros por página',
+                zeroRecords: 'Nada encontrado',
+                search: 'Buscar:',
+                paginate: {
+                    first: 'Primeiro',
+                    last: 'Último', 
+                    next: 'Próximo',
+                    previous: 'Anterior'
+                }
+
+            }
+        });
+    });
+</script>
+
+{% endblock %}

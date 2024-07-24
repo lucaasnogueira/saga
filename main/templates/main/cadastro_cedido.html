@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+    <header>Cadastrar Cedido</header>
+    
+    <form method="post" class="form" action="{% url 'main_cedido_novo' %}">
+        {% csrf_token %}
+        <div class="form-first">
+            <div class="fields">
+                <div class="input-field">
+                    <label for="id_numero">Número</label>
+                    {{ form.numero }}
+                </div>
+                <div class="input-field">
+                    <label for="id_data_saida">Data de saída</label>
+                    {{ form.data_saida }}
+                </div>
+                <div class="input-field">
+                    <label for="id_data_retorno">Data de retorno:</label>
+                    {{ form.data_retorno }}
+                </div>
+                <div class="input-field">
+                    <label for="id_preenchimento_saida">Preenchimento saída</label>
+                    {{ form.preenchimento_saida }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.preenchimento_retorno.id_for_label }}">{{ form.preenchimento_retorno.label }}</label>
+                    {{ form.preenchimento_retorno }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.cavalo_saida.id_for_label }}">{{ form.cavalo_saida.label }}</label>
+                    {{ form.cavalo_saida }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.cavalo_retorno.id_for_label }}">{{ form.cavalo_retorno.label }}</label>
+                    {{ form.cavalo_retorno }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.prancha_saida.id_for_label }}">{{ form.prancha_saida.label }}</label>
+                    {{ form.prancha_saida }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.prancha_retorno.id_for_label }}">{{ form.prancha_retorno.label }}</label>
+                    {{ form.prancha_retorno }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.motorista_saida.id_for_label }}">{{ form.motorista_saida.label }}</label>
+                    {{ form.motorista_saida }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.motorista_retorno.id_for_label }}">{{ form.motorista_retorno.label }}</label>
+                    {{ form.motorista_retorno }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.lacre.id_for_label }}">{{ form.lacre.label }}</label>
+                    {{ form.lacre }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.tipo.id_for_label }}">{{ form.tipo.label }}</label>
+                    {{ form.tipo }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.origem.id_for_label }}">{{ form.origem.label }}</label>
+                    {{ form.origem }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.destino.id_for_label }}">{{ form.destino.label }}</label>
+                    {{ form.destino }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.transportador.id_for_label }}">{{ form.transportador.label }}</label>
+                    {{ form.transportador }}
+                </div>
+                <div class="input-field">
+                    <label for="{{ form.avaria.id_for_label }}">{{ form.avaria.label }}</label>
+                    {{ form.avaria }}
+                </div>
+            </div>
+
+            <button type="submit" class="nextBtn">
+                <span class="btnText">Cadastrar</span>
+            </button>
+
+        </div>
+        
+    </form>
+{% endblock %}
